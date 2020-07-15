@@ -9,16 +9,16 @@ namespace Api.Data.Collections
   {
     public Responsavel(
           string nome,
-          string sobrenome,
+          string sobreNome,
           string email,
           string senha,
           string id,
-          IEnumerable<EstudanteDto> estudantes
+          Estudante_Dto estudantes
           )
     {
       this.Id = id;
       this.Nome = nome;
-      this.Sobrenome = sobrenome;
+      this.SobreNome = sobreNome;
       this.Email = email;
       this.Senha = senha;
       this.Estudantes = estudantes;
@@ -26,10 +26,10 @@ namespace Api.Data.Collections
 
     public string Id { get; set; }
     public string Nome { get; set; }
-    public string Sobrenome { get; set; }
+    public string SobreNome { get; set; }
     public string Email { get; set; }
     public string Senha { get; set; }
-    public IEnumerable<EstudanteDto> Estudantes { get; set; }
+    public Estudante_Dto Estudantes { get; set; }
   }
 
 }

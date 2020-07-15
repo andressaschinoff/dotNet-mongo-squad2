@@ -1,32 +1,52 @@
 <body class="background">
   <form [formGroup]="loginForm" role="form" id="quickForm">
-	<div class="login">
+    <div class="login">
+      <div class="login-screen">
+        <div class="app-title">
+          <h2>Teacher ADM</h2>
+        </div>
 
-		<div class="login-screen">
-			<div class="app-title">
-				<h2>Teacher ADM</h2>
-			</div>
+        <div class="login-form">
+          <div class="control-group">
+            <input
+              formControlName="email"
+              type="text"
+              class="login-field"
+              value=""
+              placeholder="E-mail"
+              id="login-name"
+            />
+            <label class="login-field-icon fui-user" for="login-name"></label>
+          </div>
 
-			<div class="login-form">
-				<div class="control-group">
-				<input formControlName="email" type="text" class="login-field" value="" placeholder="E-mail" id="login-name">
-				<label class="login-field-icon fui-user" for="login-name"></label>
-				</div>
+          <div class="control-group">
+            <input
+              formControlName="senha"
+              type="password"
+              class="login-field"
+              value=""
+              placeholder="Senha"
+              id="login-pass"
+            />
+            <label class="login-field-icon fui-lock" for="login-pass"></label>
+          </div>
 
-				<div class="control-group">
-				<input formControlName="senha" type="password" class="login-field" value="" placeholder="Senha" id="login-pass">
-				<label class="login-field-icon fui-lock" for="login-pass"></label>
-				</div>
-
-        <a class="btn btn-primary btn-large btn-block" [routerLink] (click)="fazerLogin()" >Entrar</a><br/>
-        <a class="btn btn-primary btn-large btn-block" [routerLink]="['/professor']" >Cadastrar</a>
+          <a
+            class="btn btn-primary btn-large btn-block"
+            [routerLink]
+            (click)="fazerLogin()"
+            >Entrar</a
+          ><br />
+          <a
+            class="btn btn-primary btn-large btn-block"
+            [routerLink]="['/tipoUsuario']"
+            >Cadastrar</a
+          >
+        </div>
       </div>
     </div>
-  </div>
-
-
-</form>
-<footer>
-	<img src="../../assets/img/indice.png">
-</footer>
+  </form>
+  <footer>
+    <img src="../../assets/img/indice.png" />
+  </footer>
 </body>

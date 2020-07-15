@@ -1,0 +1,28 @@
+<body>
+  <form class="form-signin border border-warning rounded">
+    <div class="container">
+      <div class="flex-column">
+        <div class="flex-row">
+          <input
+            type="button"
+            [routerLink]="['/professor']"
+            class="btn"
+            value="Sou Professor"
+          />
+          <input
+            type="button"
+            [routerLink]="['/responsavel']"
+            class="btn l"
+            value="Sou Responsável"
+          />
+        </div>
+        <input
+          type="button"
+          [routerLink]="['/login']"
+          class="btn"
+          value="login"
+        />
+      </div>
+    </div>
+  </form>
+</body>

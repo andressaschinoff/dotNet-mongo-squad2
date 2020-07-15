@@ -1,0 +1,98 @@
+<body>
+  <div class="login-screen">
+    <div class="app-title">
+      <h2>Responsavel</h2>
+    </div>
+
+    <form [formGroup]="responsavelForm">
+      <div class="login-form">
+        <div class="control-group">
+          <input
+            formControlName="nome"
+            type="text"
+            class="login-field"
+            value=""
+            placeholder="Nome"
+            id="login-name"
+          />
+          <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+
+        <div class="control-group">
+          <input
+            formControlName="sobrenome"
+            type="text"
+            class="login-field"
+            value=""
+            placeholder="Sobrenome"
+            id="login-pass"
+          />
+          <label class="login-field-icon fui-lock" for="login-pass"></label>
+        </div>
+
+        <div class="control-group">
+          <input
+            formControlName="email"
+            type="email"
+            class="login-field"
+            value=""
+            placeholder="E-mail"
+            id="login-pass"
+          />
+          <label class="login-field-icon fui-lock" for="login-pass"></label>
+        </div>
+
+        <div class="control-group">
+          <input
+            formControlName="senha"
+            type="password"
+            class="login-field"
+            value=""
+            placeholder="Senha"
+            id="login-pass"
+          />
+          <label class="login-field-icon fui-lock" for="login-pass"></label>
+        </div>
+
+        <div class="control-group">
+          <input
+            formControlName="confirmarSenha"
+            type="password"
+            class="login-field"
+            value=""
+            placeholder="Senha"
+            id="login-confirmationPass"
+          />
+          <label class="login-field-icon fui-lock" for="login-pass"></label>
+        </div>
+
+        <div class="control-group">
+          <div class="input-group">
+            <select formControlName="estudante" class="form-control">
+              <option class="option-select" value="" selected disabled
+                >Estudante</option
+              >
+              <option
+                class="option-select"
+                *ngFor="let aluno of alunos"
+                [value]="aluno.id"
+              >
+                {{ aluno.nome }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <a class="btn btn-primary btn-large btn-block" [routerLink]="['/login']"
+          >Login</a
+        ><br />
+        <a
+          class="btn btn-primary btn-large btn-block"
+          [routerLink]
+          (click)="save()"
+          >Cadastrar</a
+        >
+      </div>
+    </form>
+  </div>
+</body>

@@ -10,72 +10,79 @@ import { TurmaComponent } from './turma/turma.component';
 import { TurmasComponent } from './turmas/turmas.component';
 import { LoginComponent } from './login/login.component';
 import { ProfessorComponent } from './professor/professor.component';
+import { ResponsavelComponent } from './responsavel/responsavel/responsavel.component';
+import { TipoUsuarioComponent } from './tipo-usuario/tipo-usuario.component';
 
 const routes: Routes = [
   {
     path: 'Home',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'professor',
-    component: ProfessorComponent
+    component: ProfessorComponent,
   },
   {
     path: 'atividade',
-    component: AtividadeComponent
+    component: AtividadeComponent,
   },
   {
     path: 'atividade/:id',
-    component: AtividadeComponent
+    component: AtividadeComponent,
   },
   {
     path: 'atividades',
-    component: AtividadesComponent
+    component: AtividadesComponent,
   },
   {
     path: 'alunos',
-    component: AlunosComponent
+    component: AlunosComponent,
   },
   {
     path: 'aluno',
-    component: AlunoComponent
+    component: AlunoComponent,
   },
   {
     path: 'aluno/:id',
-    component: AlunoComponent
+    component: AlunoComponent,
   },
   {
     path: 'turmas',
-    component: TurmasComponent
+    component: TurmasComponent,
   },
   {
     path: 'turma',
-    component: TurmaComponent
+    component: TurmaComponent,
+  },
+  {
+    path: 'responsavel',
+    component: ResponsavelComponent,
+  },
+  {
+    path: 'tipoUsuario',
+    component: TipoUsuarioComponent,
   },
   {
     path: '**',
-    redirectTo: 'login'
-  }
-]
+    redirectTo: 'login',
+  },
+];
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes,
-      {
-        onSameUrlNavigation: 'reload',
-        preloadingStrategy: PreloadAllModules,
-        enableTracing: false,
-        useHash: true
-      })
+    RouterModule.forRoot(routes, {
+      onSameUrlNavigation: 'reload',
+      preloadingStrategy: PreloadAllModules,
+      enableTracing: false,
+      useHash: true,
+    }),
   ],
-  exports: [
-    RouterModule
-  ]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -36,7 +36,7 @@ namespace Api.Controllers
     {
       var responsavel = new Responsavel(
           dto.Nome,
-          dto.Sobrenome,
+          dto.SobreNome,
           dto.Email,
           dto.Senha,
           dto.Id,
@@ -65,7 +65,7 @@ namespace Api.Controllers
       _responsavelCollection.UpdateOne(Builders<Responsavel>.Filter
       .Where(_ => _.Id == dto.Id),
        Builders<Responsavel>.Update.Set("nome", dto.Nome)
-                                 .Set("sobreNome", dto.Sobrenome)
+                                 .Set("SobreNome", dto.SobreNome)
                                  .Set("email", dto.Email)
                                  .Set("Senha", dto.Senha)
                                  .Set("estudantes", dto.Estudantes));

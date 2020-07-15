@@ -1,0 +1,86 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial;
+  background-color: #202341;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-bottom: 40px;
+  color: white;
+  padding-top: 10%;
+}
+
+.form-signin {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.l {
+  margin-left: 20px;
+}
+
+input {
+  width: 250px;
+  height: 50px;
+  border-radius: 3px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .container {
+  width: 1000px;
+  height: 1000px;
+  background-color: #fff;
+} */
+
+input:focus {
+  border: 2px solid #3498db;
+  box-shadow: none;
+}
+
+.btn {
+  border: 2px solid transparent;
+  background: #343a40;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 250px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}

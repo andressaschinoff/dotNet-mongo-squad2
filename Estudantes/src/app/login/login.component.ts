@@ -11,62 +11,65 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-  login:Login= {
-    email:'',
-    senha:''
-  }
+  login: Login = {
+    email: '',
+    senha: '',
+  };
 
   loginForm: FormGroup;
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     private professorService: ProfessorService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
-    const user = window.localStorage.getItem('prof')
+    const user = window.localStorage.getItem('prof');
+    const res = window.localStorage.getItem('res');
     this.loginForm = new FormGroup({
       email: new FormControl(null),
       senha: new FormControl(null),
-
     });
 
-    if( user !== null)
-    {
-      this.router.navigateByUrl('/Home')
+    if (user !== null || res !== null) {
+      this.router.navigateByUrl('/Home');
     }
   }
 
   fazerLogin() {
+    this.login = Object.assign(
+      {},
+      {
+        email: this.loginForm.get('email').value,
+        senha: this.loginForm.get('senha').value,
+      }
+    );
 
-    this.login = Object.assign({}, {
+    this.professorService.fazerLogin(this.login).subscribe(
+      (response) => {
+        const data = JSON.parse(JSON.stringify(response));
 
-      email: this.loginForm.get('email').value,
-      senha: this.loginForm.get('senha').value,
-    });
-
-    this.professorService.fazerLogin(this.login)
-      .subscribe(response => {
-         const data = response;
-
-         if(data !== null)
-         {
-          this.toastr.success('Professor logado com sucesso!', 'Professor');
-         window.localStorage.setItem('prof', JSON.stringify(data) );
-        this.router.navigateByUrl('/Home');
-         }
-         else{
+        if (data !== null) {
+          if (data.estudantes !== null) {
+            this.toastr.success('Responsavel logado com sucesso!');
+            window.localStorage.setItem('res', JSON.stringify(data));
+            this.router.navigateByUrl('/Home');
+            console.log(data);
+          } else {
+            this.toastr.success('Professor logado com sucesso!');
+            window.localStorage.setItem('prof', JSON.stringify(data));
+            this.router.navigateByUrl('/Home');
+            console.log(data);
+          }
+        } else {
           this.toastr.error('E-mail ou senha incorreto!', 'Professor');
           this.router.navigateByUrl('/login');
-         }
-
-      }, err => {
-
-      });
-
-
+        }
+      },
+      (err) => {}
+    );
   }
-
 }

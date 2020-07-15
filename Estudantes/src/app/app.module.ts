@@ -19,6 +19,8 @@ import { DataTablesModule } from 'angular-datatables';
 import { RouterModule } from '@angular/router';
 import { ProfessorComponent } from './professor/professor.component';
 import { LoginComponent } from './login/login.component';
+import { ResponsavelComponent } from './responsavel/responsavel/responsavel.component';
+import { TipoUsuarioComponent } from './tipo-usuario/tipo-usuario.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { LoginComponent } from './login/login.component';
     TurmasComponent,
     HomeComponent,
     ProfessorComponent,
-    LoginComponent
+    LoginComponent,
+    ResponsavelComponent,
+    TipoUsuarioComponent
   ],
   imports: [
     CommonModule,

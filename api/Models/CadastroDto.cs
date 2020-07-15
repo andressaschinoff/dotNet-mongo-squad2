@@ -33,9 +33,16 @@ namespace Api.Models
   {
     public string Id { get; set; }
     public string Nome { get; set; }
-    public string Sobrenome { get; set; }
+    public string SobreNome { get; set; }
     public string Email { get; set; }
     public string Senha { get; set; }
-    public IEnumerable<EstudanteDto> Estudantes { get; set; }
+    public Estudante_Dto Estudantes { get; set; }
+  }
+
+  public class Estudante_Dto
+  {
+    public string Id { get; set; }
+    public string Nome { get; set; }
+    public string Turma { get; set; }
   }
 }
